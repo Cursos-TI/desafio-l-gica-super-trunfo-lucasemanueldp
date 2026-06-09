@@ -3,8 +3,8 @@
 int main() {
     // Adição das váriaveis e atributos
     char estado1, estado2, codigo1[50],codigo2[50], nomecidade1[50], nomecidade2[50];
-    int pontosturisticos1, pontosturisticos2, menu;
-    unsigned long int populacao1, populacao2;
+    int pontosturisticos1, pontosturisticos2, menu1, menu2;
+    unsigned long int populacao1, populacao2, somaCarta1, somaCarta2;
     float area1, area2, pib1, pib2, densidadepopulacional1, densidadepopulacional2, pibpercapita1, pibpercapita2, inversodens1, inversodens2, superPoder1, superPoder2;
     
     //Apenas para maior organização visual
@@ -114,7 +114,7 @@ int main() {
     printf("--------------------------------------------\n");
     //Finalização Carta 2
 
-    //Visualização do MENU
+    //Visualização do MENU 1
     printf("--------------------------------------------\n");
     printf("             HORA DA BATALHA                 \n");
     printf("--------------------------------------------\n");
@@ -124,20 +124,22 @@ int main() {
     printf("3- PIB\n");
     printf("4- Pontos Turísticos\n");
     printf("5- Densidade Demográfica\n");
-    scanf("%d", &menu);
+    scanf("%d", &menu1);
 
-    //Menu interativo
-    switch (menu)
+    //Menu interativo 1
+    switch (menu1)
     {
     case 1:
+        somaCarta1 += populacao1;
+        somaCarta2 += populacao2;
         if(populacao1 > populacao2) {
             printf("Card 1 %s - População: %lu\n", nomecidade1, populacao1);
             printf("Card 2 %s - População: %lu\n", nomecidade2, populacao2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
         }else if (populacao1 < populacao2) {
             printf("Card 1 %s - População: %lu\n", nomecidade1, populacao1);
             printf("Card 2 %s - População: %lu\n", nomecidade2, populacao2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
         }else {
             printf("Card 1 %s - População: %lu\n", nomecidade1, populacao1);
             printf("Card 2 %s - População: %lu\n", nomecidade2, populacao2);
@@ -145,14 +147,16 @@ int main() {
         }
         break;
     case 2:
+        somaCarta1 += area1;
+        somaCarta2 += area2;
         if(area1 > area2) {
             printf("Card 1 %s - Área: %.2f\n",nomecidade1, area1);
             printf("Card 2 %s - Área: %.2f\n",nomecidade2, area2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
         }else if (area1 < area2) {
             printf("Card 1 %s - Área: %.2f\n",nomecidade1, area1);
             printf("Card 2 %s - Área: %.2f\n",nomecidade2, area2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
         }else {
             printf("Card 1 %s - Área: %.2f\n",nomecidade1, area1);
             printf("Card 2 %s - Área: %.2f\n",nomecidade2, area2);
@@ -160,14 +164,16 @@ int main() {
         }
         break;
     case 3:
+        somaCarta1 += pib1;
+        somaCarta2 += pib2;
         if(pib1 > pib2) {
             printf("Card 1 %s - PIB: %.2f\n",nomecidade1, pib1);
             printf("Card 2 %s - PIB: %.2f\n",nomecidade2, pib2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
         }else if (pib1 < pib2) {
             printf("Card 1 %s - PIB: %.2f\n",nomecidade1, pib1);
             printf("Card 2 %s - PIB: %.2f\n",nomecidade2, pib2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
         }else {
             printf("Card 1 %s - PIB: %.2f\n",nomecidade1, pib1);
             printf("Card 2 %s - PIB: %.2f\n",nomecidade2, pib2);
@@ -175,14 +181,16 @@ int main() {
         }
         break;
     case 4:
+        somaCarta1 += pontosturisticos1;
+        somaCarta2 += pontosturisticos2;
         if(pontosturisticos1 > pontosturisticos2) {
             printf("Card 1 %s - Pontos Turísticos: %d\n",nomecidade1, pontosturisticos1);
             printf("Card 2 %s - Pontos Turísticos: %d\n",nomecidade2, pontosturisticos2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
         }else if (pontosturisticos1 < pontosturisticos2) {
             printf("Card 1 %s - Pontos Turísticos: %d\n",nomecidade1, pontosturisticos1);
             printf("Card 2 %s - Pontos Turísticos: %d\n",nomecidade2, pontosturisticos2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
         }else {
             printf("Card 1 %s - Pontos Turísticos: %d\n",nomecidade1, pontosturisticos1);
             printf("Card 2 %s - Pontos Turísticos: %d\n",nomecidade2, pontosturisticos2);
@@ -190,14 +198,16 @@ int main() {
         }
         break;
     case 5:
+        somaCarta1 += inversodens1;
+        somaCarta2 += inversodens2;
         if(inversodens1 < inversodens2) {
             printf("Card 1 %s - Densidade Demográfica: %.2f\n",nomecidade1, inversodens1);
             printf("Card 2 %s - Densidade Demográfica: %.2f\n",nomecidade2, inversodens2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
         }else if (inversodens1 > inversodens2) {
             printf("Card 1 %s - Densidade Demográfica: %.2f\n",nomecidade1, inversodens1);
             printf("Card 2 %s - Densidade Demográfica: %.2f\n",nomecidade2, inversodens2);
-            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!");
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
         }else {
             printf("Card 1 %s - Densidade Demográfica: %.2f\n",nomecidade1, inversodens1);
             printf("Card 2 %s - Densidade Demográfica: %.2f\n",nomecidade2, inversodens2);
@@ -206,10 +216,136 @@ int main() {
         break;
     
     default:
-        printf("OPÇÃO INVÁLIDA! DIGITE APENAS OS NÚMEROS DO MENU!");
-        break;
+        printf("OPÇÃO INVÁLIDA! DIGITE APENAS OS NÚMEROS DO MENU!\n");
+        break; 
     }
 
+    //Visualização do MENU 2
+    printf("--------------------------------------------\n");
+    printf("             HORA DA BATALHA                 \n");
+    printf("--------------------------------------------\n");
+    printf("Escolha qual atributo deseja comparar:\n");
+    printf("1- População\n");
+    printf("2- Área\n");
+    printf("3- PIB\n");
+    printf("4- Pontos Turísticos\n");
+    printf("5- Densidade Demográfica\n");
+    scanf("%d", &menu2);
+
+    //Menu interativo 1
+    if(menu1 == menu2) {
+        printf("Você escolheu a mesma opção, precisa escolher uma diferente...");
+    }else {
+    switch (menu2)
+    {
+    case 1:
+        somaCarta1 += populacao1;
+        somaCarta2 += populacao2;
+        if(populacao1 > populacao2) {
+            printf("Card 1 %s - População: %lu\n", nomecidade1, populacao1);
+            printf("Card 2 %s - População: %lu\n", nomecidade2, populacao2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
+        }else if (populacao1 < populacao2) {
+            printf("Card 1 %s - População: %lu\n", nomecidade1, populacao1);
+            printf("Card 2 %s - População: %lu\n", nomecidade2, populacao2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
+        }else {
+            printf("Card 1 %s - População: %lu\n", nomecidade1, populacao1);
+            printf("Card 2 %s - População: %lu\n", nomecidade2, populacao2);
+            printf("    !!! EMPATE !!!!    \n");
+        }
+        break;
+    case 2:
+        somaCarta1 += area1;
+        somaCarta2 += area2;
+        if(area1 > area2) {
+            printf("Card 1 %s - Área: %.2f\n",nomecidade1, area1);
+            printf("Card 2 %s - Área: %.2f\n",nomecidade2, area2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
+        }else if (area1 < area2) {
+            printf("Card 1 %s - Área: %.2f\n",nomecidade1, area1);
+            printf("Card 2 %s - Área: %.2f\n",nomecidade2, area2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
+        }else {
+            printf("Card 1 %s - Área: %.2f\n",nomecidade1, area1);
+            printf("Card 2 %s - Área: %.2f\n",nomecidade2, area2);
+            printf("    !!! EMPATE !!!!    \n");
+        }
+        break;
+    case 3:
+        somaCarta1 += pib1;
+        somaCarta2 += pib2;
+        if(pib1 > pib2) {
+            printf("Card 1 %s - PIB: %.2f\n",nomecidade1, pib1);
+            printf("Card 2 %s - PIB: %.2f\n",nomecidade2, pib2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
+        }else if (pib1 < pib2) {
+            printf("Card 1 %s - PIB: %.2f\n",nomecidade1, pib1);
+            printf("Card 2 %s - PIB: %.2f\n",nomecidade2, pib2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
+        }else {
+            printf("Card 1 %s - PIB: %.2f\n",nomecidade1, pib1);
+            printf("Card 2 %s - PIB: %.2f\n",nomecidade2, pib2);
+            printf("    !!! EMPATE !!!!    \n");
+        }
+        break;
+    case 4:
+        somaCarta1 += pontosturisticos1;
+        somaCarta2 += pontosturisticos2;
+        if(pontosturisticos1 > pontosturisticos2) {
+            printf("Card 1 %s - Pontos Turísticos: %d\n",nomecidade1, pontosturisticos1);
+            printf("Card 2 %s - Pontos Turísticos: %d\n",nomecidade2, pontosturisticos2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
+        }else if (pontosturisticos1 < pontosturisticos2) {
+            printf("Card 1 %s - Pontos Turísticos: %d\n",nomecidade1, pontosturisticos1);
+            printf("Card 2 %s - Pontos Turísticos: %d\n",nomecidade2, pontosturisticos2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
+        }else {
+            printf("Card 1 %s - Pontos Turísticos: %d\n",nomecidade1, pontosturisticos1);
+            printf("Card 2 %s - Pontos Turísticos: %d\n",nomecidade2, pontosturisticos2);
+            printf("    !!! EMPATE !!!!    \n");
+        }
+        break;
+    case 5:
+        somaCarta1 += inversodens1;
+        somaCarta2 += inversodens2;
+        if(inversodens1 < inversodens2) {
+            printf("Card 1 %s - Densidade Demográfica: %.2f\n",nomecidade1, inversodens1);
+            printf("Card 2 %s - Densidade Demográfica: %.2f\n",nomecidade2, inversodens2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 1!!!!\n");
+        }else if (inversodens1 > inversodens2) {
+            printf("Card 1 %s - Densidade Demográfica: %.2f\n",nomecidade1, inversodens1);
+            printf("Card 2 %s - Densidade Demográfica: %.2f\n",nomecidade2, inversodens2);
+            printf("!!!VENCEDOR DESSA RODADA: CARD 2!!!!\n");
+        }else {
+            printf("Card 1 %s - Densidade Demográfica: %.2f\n",nomecidade1, inversodens1);
+            printf("Card 2 %s - Densidade Demográfica: %.2f\n",nomecidade2, inversodens2);
+            printf("    !!! EMPATE !!!!    \n");
+        }
+        break;
+    
+    default:
+        printf("OPÇÃO INVÁLIDA! DIGITE APENAS OS NÚMEROS DO MENU!\n");
+        break;
+    }
+    }
+    //Visualização do Resultado Final
+    printf("--------------------------------------------\n");
+    printf("             RESULTADO FINAL                 \n");
+    printf("--------------------------------------------\n");
+    printf("Card 1 - %s SOMA FINAL: %lu\n", nomecidade1, somaCarta1);
+    printf("Card 2 - %s SOMA FINAL: %lu\n", nomecidade2, somaCarta2);
+    printf("--------------------------------------------\n");
+    if (somaCarta1 > somaCarta2) {
+        printf("Card 1 - %s GANHOU, PARABÉNS!!!\n", nomecidade1);
+        printf("--------------------------------------------\n");
+    }else if (somaCarta1 < somaCarta2) {
+        printf("Card 2 - %s GANHOU, PARABÉNS!!!\n", nomecidade2);
+        printf("--------------------------------------------\n");
+    }else {
+        printf("!!!HOUVE UM EMPATE!!!\n");
+        printf("--------------------------------------------\n");
+    }
     
 
 
